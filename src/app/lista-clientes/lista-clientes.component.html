@@ -1,0 +1,41 @@
+<h2>Lista Clientes</h2>
+<table class="table table-striped">
+<thead class="table-dark " >
+<tr>
+    <th>Nombre</th>
+    <th>A.Paterno</th>
+    <th>A.Materno</th> 
+    <th>Fecha de Nacimiento</th>
+    <th>Sexo</th>
+    <th>Direccion</th>
+    <th>Correo</th>
+    <th></th>
+    
+    
+    
+</tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let cliente  of clientes">
+        <td>{{cliente.nombres}}</td>
+        <td>{{cliente.aPaterno}}</td>
+        <td>{{cliente.aMaterno}}</td>
+        <td>{{cliente.fechaNacimiento}}</td>
+        <td>{{cliente.sexo}}</td>
+        <td>{{cliente.direccion}}</td>
+        <td>{{cliente.emal}}</td>
+        <td>
+        
+            <button (click)="actualizarClientes(cliente.id)" class="btn btn-info">editar</button>
+        
+            <button (click)="eliminarCliente(cliente.id)" class="btn btn-info" style="margin-left : 10px;">eliminar</button>
+        
+            <button (click)= "verDetallesDelCliente(cliente.id)" class="btn btn-primary" style="margin-left : 10px;">Detalles</button>
+  
+            
+        </td>
+    </tr>
+</tbody>
+
+</table>
